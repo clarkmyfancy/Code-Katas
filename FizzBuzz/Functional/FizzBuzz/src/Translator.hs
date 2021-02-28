@@ -3,13 +3,13 @@ module Translator where
 translate :: Int -> [Char]
 translate 0 = []
 translate num =
-    let state = attemptToAssignStateFixx num ++ attemptToAssignStateBucks num in    
+    let state = attemptToAssignFixxTo num ++ attemptToAssignBucksTo num in    
         if state /= ""
             then state
         else show num
 
-attemptToAssignStateFixx :: Int -> [Char]
-attemptToAssignStateFixx x = do 
+attemptToAssignFixxTo :: Int -> [Char]
+attemptToAssignFixxTo x = do 
     if x `isEvenlyDivisibleBy` 3 
         || x `containsTheNumber` 3
         then "Fixx"
@@ -26,8 +26,8 @@ containsTheNumber candidate comparator =
             then True
         else containsTheNumber (candidate `quot` 10) comparator
 
-attemptToAssignStateBucks :: Int -> [Char]
-attemptToAssignStateBucks x = do 
+attemptToAssignBucksTo :: Int -> [Char]
+attemptToAssignBucksTo x = do 
     if x `isEvenlyDivisibleBy` 5 
         || x `containsTheNumber` 5
         then "Bucks"
