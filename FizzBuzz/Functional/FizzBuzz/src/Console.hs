@@ -18,9 +18,6 @@ printNBlankLines n = do
 showUpperBoundPrompt :: IO() 
 showUpperBoundPrompt = putStr "what is the upper bound?  -> "
 
-showRangeWith :: Int -> [Char]
-showRangeWith upperBound = "[1.." ++ (show upperBound) ++ "]"
-
 getUpperBoundAndDeriveResults :: IO()
 getUpperBoundAndDeriveResults = do 
     upperBound <- getLine
@@ -34,8 +31,8 @@ printTranslation upperBound = do
 
 explainWhatWillHappenWith :: Int -> IO()
 explainWhatWillHappenWith upperBound = do 
-    putStr "running FixxBucks with the numbers 1 through 100"
-    putStrLn (showRangeWith upperBound)
+    putStr ("running FixxBucks with the numbers 1 through " ++ show upperBound)
+    printNBlankLines 1
 
 envokeTranslator :: [Int] -> IO()
 envokeTranslator [] = printNBlankLines 1
