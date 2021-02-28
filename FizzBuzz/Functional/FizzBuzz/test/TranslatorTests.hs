@@ -4,7 +4,6 @@ import Test.Tasty
 import Test.Tasty.HUnit
 
 import Translator
-import ListMaker
 
 main :: IO ()
 main = defaultMain testRoot
@@ -38,9 +37,6 @@ translatorTests = testGroup ".translate"
         
         , testCase "when given a multiple of both 3 AND 5, returns \"FixxBucks\"" $
             translate 15 @?= "FixxBucks"
-
-        , testCase "when given a number containing 3, returns \"Fixx\"" $
-            translate 13 @?= "Fixx"
     ]
 
 containsTheNumber3Tests :: TestTree
@@ -65,10 +61,10 @@ containsTheNumber5Tests = testGroup ".containsTheNumber (comparing with 5)"
         testCase "when given 0, returns False" $
             0 `containsTheNumber` 5 @?= False
 
-        , testCase "when given 24542897492, returns False" $
+        , testCase "when given 200442897492, returns False" $
             200442897492 `containsTheNumber` 5 @?= False
         
-        , testCase "when given 3, returns True" $
+        , testCase "when given 5, returns True" $
             5 `containsTheNumber` 5 @?= True
                 
         , testCase "when given 153450000, returns True" $
