@@ -3,7 +3,7 @@ module Translator where
 translate :: Int -> [Char]
 translate 0 = []
 translate num =
-    let state = (attemptToAssignStateFixx num) ++ (attemptToAssignStateBucks num) in    
+    let state = attemptToAssignStateFixx num ++ attemptToAssignStateBucks num in    
         if state /= ""
             then state
         else show num
