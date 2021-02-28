@@ -4,12 +4,16 @@ import Translator
 
 printHeader :: IO() 
 printHeader = do
+    printNBlankLines 3
     putStrLn "__________________________"
     putStrLn "         welcome          "
     putStrLn "       to FixxBucks       "
 
-printBlankLine :: IO()
-printBlankLine = putStr "\n"
+printNBlankLines :: Int -> IO()
+printNBlankLines 0 = putStr ""
+printNBlankLines n = do 
+    putStr "\n"
+    printNBlankLines (n - 1)
 
 showUpperBoundPrompt :: IO() 
 showUpperBoundPrompt = putStr "what is the upper bound?  -> "
@@ -20,7 +24,7 @@ showRangeWith upperBound = "[1.." ++ (show upperBound) ++ "]"
 getUpperBoundAndDeriveResults :: IO()
 getUpperBoundAndDeriveResults = do 
     upperBound <- getLine
-    printBlankLine
+    printNBlankLines 1
     printTranslation (read upperBound :: Int)
 
 printTranslation :: Int -> IO()
@@ -34,7 +38,7 @@ explainWhatWillHappenWith upperBound = do
     putStrLn (showRangeWith upperBound)
 
 envokeTranslator :: [Int] -> IO()
-envokeTranslator [] = printBlankLine
+envokeTranslator [] = printNBlankLines 1
 envokeTranslator (x:xs) = do
-    putStrLn (translate x)
+    putStrLn (show x ++ ":  " ++ translate x)
     envokeTranslator xs
