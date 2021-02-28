@@ -5,7 +5,7 @@ import Console
 main :: IO ()
 main = do 
     printHeader
-    printBlankLine
+    printNBlankLines 1
     showUpperBoundPrompt
     getUpperBoundAndDeriveResults
     
