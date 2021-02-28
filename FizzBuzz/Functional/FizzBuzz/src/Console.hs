@@ -34,7 +34,7 @@ printTranslation upperBound = do
 
 explainWhatWillHappenWith :: Int -> IO()
 explainWhatWillHappenWith upperBound = do 
-    putStr "running FixxBucks agains the list: "
+    putStr "running FixxBucks with the numbers 1 through 100"
     putStrLn (showRangeWith upperBound)
 
 envokeTranslator :: [Int] -> IO()
