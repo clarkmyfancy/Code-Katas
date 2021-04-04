@@ -30,8 +30,10 @@ source-repository head
 library
   exposed-modules:
       Console
-      , ConcreteDate
       , Date
+      , ConcreteDate
+      , Register
+      , ConcreteRegister
   other-modules:
       Paths_Supermarket_Pricing
   hs-source-dirs:
@@ -43,7 +45,7 @@ library
 
 
 executable Supermarket-Pricing-exe
-  main-is: Main.hs
+  main-is: Cashier.hs
   other-modules:
       Paths_Supermarket_Pricing
   hs-source-dirs:
