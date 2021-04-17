@@ -15,6 +15,20 @@ displayDate = do
 greetCustomer :: IO()
 greetCustomer = do
     putStr "Hey! Let's scan some items!"
+    printNBlankLines 1 
+
+continuouslyPromptUserForItems :: IO()
+continuouslyPromptUserForItems = do    
+    item <- getLine
+    putStr item
+    if item == (show 0)
+        then do 
+            printNBlankLines 1
+        else do 
+            printNBlankLines 2
+            continuouslyPromptUserForItems
+
+    
 
 -- prompt:
 -- showUpperBoundPrompt :: IO() 
