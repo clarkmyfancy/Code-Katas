@@ -6,4 +6,4 @@ main :: IO()
 main = do
     displayDate
     greetCustomer
-    continuouslyPromptUserForItems
+    continuouslyPromptUserForItems 0.0
