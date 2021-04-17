@@ -29,23 +29,23 @@ source-repository head
 
 library
   exposed-modules:
-      Console
-      , Date
-      , ConcreteDate
-      , Register
-      , ConcreteRegister
+    Console
+    , Date
+    , ConcreteDate
+    , Register
+    , ConcreteRegister
   other-modules:
-      Paths_Supermarket_Pricing
+    Paths_Supermarket_Pricing
   hs-source-dirs:
-      src
+    src
   build-depends:
-      base >=4.7 && <5
-      , time >=1.9.3
+    base >=4.7 && <5
+    , time >=1.9.3
   default-language: Haskell2010
 
 
 executable Supermarket-Pricing-exe
-  main-is: Cashier.hs
+  main-is: Main.hs
   other-modules:
       Paths_Supermarket_Pricing
   hs-source-dirs:
