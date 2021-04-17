@@ -1,5 +1,5 @@
 module ConcreteRegister where
 
--- -- gets currentTotal and 
--- scanItem :: 
--- scanItem = do
+scanNewItem :: Double -> Double -> Double
+scanNewItem previousCartTotal price = do 
+    previousCartTotal + price
