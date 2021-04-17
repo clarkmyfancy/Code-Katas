@@ -1,6 +1,7 @@
 module Console where
 
 import Date
+import Register
 
 printNBlankLines :: Int -> IO()
 printNBlankLines 0 = putStr ""
@@ -32,7 +33,3 @@ continuouslyPromptUserForItems previousCartTotal = do
 
 convertToDouble :: [Char] -> Double
 convertToDouble x = read x :: Double
-
-scanNewItem :: Double -> Double -> Double
-scanNewItem previousCartTotal price = do 
-    previousCartTotal + price
