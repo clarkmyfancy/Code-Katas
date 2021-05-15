@@ -1,14 +1,10 @@
 module Main where
 
-import Dice
+import Console
 
 main :: IO ()
 main = do
-    putStr thing
-
-
-
--- players
--- currentTurn
--- numberOfTurnsLeft
+    printStartPrompt
+    promptForHowManyPlayers
+    getNumberOfPlayers
 
