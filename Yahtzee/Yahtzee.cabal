@@ -30,6 +30,7 @@ library
       Lib
       , Game
       , Dice
+      , Console
   other-modules:
       Paths_Yahtzee
   hs-source-dirs:
