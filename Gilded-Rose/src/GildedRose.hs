@@ -14,7 +14,7 @@ updateQuality = map updateQualityItem
   where
     updateQualityItem (Item name sellIn quality) =
       let
-        quality' = doThing name sellIn quality
+        quality' = updateOnlyQuality name sellIn quality
           
         sellIn' =
           if name /= "Sulfuras, Hand of Ragnaros"
@@ -40,8 +40,8 @@ updateQuality = map updateQualityItem
             else (Item name sellIn' quality')
         else (Item name sellIn' quality')
 
-doThing :: String -> Int -> Int -> Int
-doThing name sellIn quality = do
+updateOnlyQuality :: String -> Int -> Int -> Int
+updateOnlyQuality name sellIn quality = do
   if name /= "Aged Brie"
       && name /= "Backstage passes to a TAFKAL80ETC concert"
   then
