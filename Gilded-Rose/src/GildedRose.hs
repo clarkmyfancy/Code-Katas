@@ -15,11 +15,7 @@ updateQuality = map updateQualityItem
     updateQualityItem (Item name sellIn quality) =
       let
         quality' = updateOnlyQuality name sellIn quality
-          
-        sellIn' =
-          if name /= "Sulfuras, Hand of Ragnaros"
-          then sellIn - 1
-          else sellIn
+        sellIn' = updateOnlySellByDate name sellIn
       in
         if sellIn' < 0
         then
@@ -71,3 +67,9 @@ updateOnlyQuality name sellIn quality = do
             else 0
           else 0)
     else quality
+
+updateOnlySellByDate :: String -> Int -> Int 
+updateOnlySellByDate name sellIn = do
+  if name /= "Sulfuras, Hand of Ragnaros"
+  then sellIn - 1
+  else sellIn
