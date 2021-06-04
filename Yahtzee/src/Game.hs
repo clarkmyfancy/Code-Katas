@@ -1,5 +1,9 @@
 module Game where
 
 
-thing :: Bool
-thing = False
+data State = State
+    { 
+        numPlayers :: Int
+        , roundsRemaining :: Int
+        , currentRound :: Int
+    } deriving Show
