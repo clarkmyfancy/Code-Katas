@@ -2,7 +2,8 @@ from ToyMachine import ToyMachine
 from Elf import Elf
 from Sleigh import Sleigh
 
-
+# link to kata
+# https://codingdojo.org/kata/christmas-delivery/
 
 def main():
     tm = ToyMachine()
