@@ -9,5 +9,5 @@ Stack is used to compile and run haskell
 
 
 Testing:
-1. navigate to where you can see the `test/` folder
+1. navigate to `/Functional/FizzBuzz/` folder
 2. run `stack test`
